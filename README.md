@@ -4,7 +4,7 @@ Project in progress...
 
 ## The main goal of the app is:
 
-* To learn to upload and display an image from a computer
+* To learn to upload and display an image from a computer in a React-Redux app
 
 ## To run the app:
 
