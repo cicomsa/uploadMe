@@ -14,11 +14,10 @@ class UploadPage extends PureComponent {
     render() {
 
         const {file} = this.props
-        let {imagePreviewUrl} = this.state
-
+     
         return (
             <div>
-                <UploadForm initialValues={file} onSubmit={this.addFile}/>
+                <UploadForm initialValues={file} onSubmit={this.addFile}/>             
             </div>
         )
     }
