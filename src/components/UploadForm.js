@@ -36,7 +36,7 @@ export default class UploadForm extends PureComponent {
         let {imagePreviewUrl} = this.state;
         let imagePreview = null;
         if (imagePreviewUrl) {
-            imagePreview = (<img src={imagePreviewUrl} alt="filePreview" width="300px"/>);
+            imagePreview = (<img src={imagePreviewUrl} alt="filePreview"/>);
         }
      
         return (

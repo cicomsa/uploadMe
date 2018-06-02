@@ -12,7 +12,7 @@ class DisplayPage extends PureComponent {
         const {file} = this.props
         let imagePreview = null
         if (file.imagePreviewUrl) {
-            imagePreview = (<img className="displayImg" src={file.imagePreviewUrl} alt="displayImage" width="300px"/>);
+            imagePreview = (<img className="displayImg" src={file.imagePreviewUrl} alt="displayImage"/>);
         }
         
         return (

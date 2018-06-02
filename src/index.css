@@ -2,4 +2,35 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: tomato;
+          
+}
+
+.App {
+  min-height:500px;
+  display: flex;
+  justify-content: center;
+  margin: 110px 180px;
+  text-align: center;
+}
+
+.uploadImage {
+  background-color: aquamarine;
+  width: 50%;
+}
+
+.displayImage {
+  background-color: yellow;
+  width: 50%;
+}
+
+.displayImg {
+  margin-top: 19px;
+}
+
+img {
+
+  max-width: 90%;
+  height: 400px;
+
 }

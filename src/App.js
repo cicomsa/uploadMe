@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import UploadPage from './components/UploadPage';
 import DisplayPage from './components/DisplayPage'
 
