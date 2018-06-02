@@ -7,10 +7,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="upload">
+        <div className="uploadImage">
           <UploadPage/>
         </div>
-        <div className="display">
+        <div className="displayImage">
           <DisplayPage/>
         </div>
       </div>

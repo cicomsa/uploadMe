@@ -37,12 +37,10 @@ export default class UploadForm extends PureComponent {
         let imagePreview = null;
         if (imagePreviewUrl) {
             imagePreview = (<img src={imagePreviewUrl} alt="filePreview" width="300px"/>);
-        } else {
-            imagePreview = (<div className="previewText">Please select an Image for Preview</div>);
         }
      
         return (
-          <div className="previewComponent">
+          <div className="previewComponent">    
             <form onSubmit={(e)=>this.handleSubmit(e)}>
               <input className="fileInput"
                 type="file"
@@ -52,7 +50,7 @@ export default class UploadForm extends PureComponent {
                 onClick={(e)=>this.handleSubmit(e)}>Upload Image</button>
             </form>
             <div className="imgPreview">
-              {imagePreview}
+                {imagePreview}
             </div>
           </div>
         )

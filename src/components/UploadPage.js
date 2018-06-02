@@ -17,6 +17,7 @@ class UploadPage extends PureComponent {
      
         return (
             <div>
+                <p>Preview image</p>
                 <UploadForm initialValues={file} onSubmit={this.addFile}/>             
             </div>
         )
