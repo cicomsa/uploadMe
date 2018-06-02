@@ -5,13 +5,16 @@ import {uploadFile} from '../actions/uploadFile'
 
 class UploadPage extends PureComponent {
 
+    state = {imagePreviewUrl: ''}
+
     addFile = (file) => {
-        this.props.uploadFile(file)  
+        this.props.uploadFile(file) 
     }
 
     render() {
 
         const {file} = this.props
+        let {imagePreviewUrl} = this.state
 
         return (
             <div>
