@@ -1,5 +1,5 @@
-import upload from './upload'
+import uploadFile from './uploadFile'
 
 export default {
-    upload
+    uploadFile
 }

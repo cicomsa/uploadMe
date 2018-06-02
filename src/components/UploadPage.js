@@ -1,40 +1,32 @@
 import React, {PureComponent} from 'react'
+import {connect} from 'react-redux'
+import UploadForm from './UploadForm'
+import {uploadFile} from '../actions/uploadFile'
 
+class UploadPage extends PureComponent {
 
-export default class UploadPage extends PureComponent {
-    state = {file: ''}
-
-    handleSubmit = (e) => {
-        e.preventDefault()
-        console.log(this.state.file)
+    addFile = (file) => {
+        this.props.uploadFile(file)  
     }
-
-    handleImageChange = (e) => {
-        e.preventDefault()
-        let file = e.target.files[0]
-        this.setState({
-            file: file
-        })
-        console.log('file added')
-    }    
 
     render() {
 
+        const {file} = this.props
+
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
-                    <input
-                        className="fileInput"
-                        type="file"
-                        onChange={(e)=>this.handleImageChange(e)} />
-                    <button 
-                        className="submitButton"
-                        type="submit"
-                        onClick={(e)=>this.handleSubmit(e)}>
-                        Upload Image
-                    </button>
-                </form>
+                <UploadForm initialValues={file} onSubmit={this.addFile}/>
             </div>
         )
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        file: state.uploadFile
+    }
+}
+
+export default connect (mapStateToProps, {uploadFile}) (UploadPage)
+
+
