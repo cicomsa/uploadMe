@@ -2,16 +2,16 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-  background-color: tomato;
-          
+  background-color: tomato;         
 }
 
 .App {
-  min-height:500px;
+  min-height:200px;
+  max-height: 500px;
   display: flex;
   justify-content: center;
-  margin: 110px 180px;
-  text-align: center;
+  margin: 150px 180px;
+  text-align: center; 
 }
 
 .uploadImage {
@@ -29,8 +29,7 @@ body {
 }
 
 img {
-
   max-width: 90%;
-  height: 400px;
-
+  max-height: 300px;
+  margin-bottom: 20px;
 }
