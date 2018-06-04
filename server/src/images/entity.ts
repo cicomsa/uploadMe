@@ -7,7 +7,10 @@ export default class Image extends BaseEntity {
   @PrimaryGeneratedColumn()
   id?: number
  
-  @Column('text')
-  image: string
+  @Column('text', {nullable:true})
+  file: string
+
+  @Column('text', {nullable:true})
+  imagePreviewUrl: string
 
 }
