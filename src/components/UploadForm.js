@@ -2,16 +2,16 @@ import React, {PureComponent} from 'react'
 
 export default class UploadForm extends PureComponent {
    
-    state = {file: '',imagePreviewUrl: ''}
+    state = {file: '', imagePreviewUrl: ''}
        
     handleSubmit = (e) => {
         e.preventDefault();
   
         this.props.onSubmit(this.state)
         this.setState({
-            imagePreviewUrl: ""
+            imagePreviewUrl: ''
         })
-        this.refs.file.value = ""
+        this.refs.file.value = ''
     }
      
     handleImageChange = (e) => {
@@ -30,28 +30,26 @@ export default class UploadForm extends PureComponent {
     }
      
       render() {
-        let {imagePreviewUrl} = this.state;
-        let imagePreview = null;
+        const {imagePreviewUrl} = this.state
+        let imagePreview = null
         if (imagePreviewUrl) {
-            imagePreview = (<img src={imagePreviewUrl} alt="filePreview"/>);
+            imagePreview = <img src={imagePreviewUrl} alt="filePreview"/>
         }
      
         return (
-          <div className="previewComponent">    
+          <div>    
             <form onSubmit={(e)=>this.handleSubmit(e)}>
-                <input className="fileInput"
+                <input 
                     type="file"
                     onChange={(e)=>this.handleImageChange(e)} 
                     ref="file"/>
-                <button className="submitButton"
+                <button
                     type="submit"
                     onClick={(e)=>this.handleSubmit(e)}>
                     Upload Image
                  </button>
             </form>
-            <div className="imgPreview">
-                {imagePreview}
-            </div>
+            {imagePreview}
           </div>
         )
     }
