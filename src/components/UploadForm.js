@@ -11,6 +11,7 @@ export default class UploadForm extends PureComponent {
         this.setState({
             imagePreviewUrl: ""
         })
+        this.refs.file.value = ''
     }
      
     handleImageChange = (e) => {
@@ -40,7 +41,8 @@ export default class UploadForm extends PureComponent {
             <form onSubmit={(e)=>this.handleSubmit(e)}>
                 <input className="fileInput"
                     type="file"
-                    onChange={(e)=>this.handleImageChange(e)} />
+                    onChange={(e)=>this.handleImageChange(e)} 
+                    ref="file"/>
                 <button className="submitButton"
                     type="submit"
                     onClick={(e)=>this.handleSubmit(e)}>
