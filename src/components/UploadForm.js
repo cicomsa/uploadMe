@@ -11,7 +11,7 @@ export default class UploadForm extends PureComponent {
         this.setState({
             imagePreviewUrl: ""
         })
-        this.refs.file.value = ''
+        this.refs.file.value = ""
     }
      
     handleImageChange = (e) => {
