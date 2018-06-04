@@ -4,7 +4,8 @@ Project in progress...
 
 ## The main goal of the app is:
 
-* To learn to upload and display an image from a computer in a React-Redux app
+* To learn to upload and display an image from a computer in a React-Redux app context
+* To learn to use AWS for storing files
 
 ## To run the app:
 
