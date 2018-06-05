@@ -30,7 +30,7 @@ export default class UploadForm extends PureComponent {
     }
      
       render() {
-        const {imagePreviewUrl} = this.state
+        const {imagePreviewUrl, file} = this.state
         let imagePreview = null
         if (imagePreviewUrl) {
             imagePreview = <img src={imagePreviewUrl} alt="filePreview"/>
@@ -41,13 +41,17 @@ export default class UploadForm extends PureComponent {
             <form onSubmit={(e)=>this.handleSubmit(e)}>
                 <input 
                     type="file"
-                    onChange={(e)=>this.handleImageChange(e)} 
+                    onChange={(e)=>e.target.files? 
+                        (e.target.files[0].size<500032?this.handleImageChange(e):
+                        console.log("Warning: File too large to upload. Try another one.")):""} 
                     ref="file"/>
-                <button
-                    type="submit"
-                    onClick={(e)=>this.handleSubmit(e)}>
-                    Upload Image
-                 </button>
+                {file.size<500032 && 
+                    <button
+                        type="submit"
+                        onClick={(e)=>this.handleSubmit(e)}>
+                        Upload Image
+                    </button>
+                }
             </form>
             {imagePreview}
           </div>
