@@ -7,7 +7,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className="App">
           <main style={{marginTop:75}}>
           <Route exact path="/upload" component={UploadPage} />
           <Route exact path="/display/:id" component={DisplayPage} />
