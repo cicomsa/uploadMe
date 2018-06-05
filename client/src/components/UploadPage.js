@@ -21,15 +21,17 @@ class UploadPage extends PureComponent {
         const {file, files} = this.props
      
         return (
-            <div>
+            <div className="uploadImage">
                 <p>Preview image</p>
                 <UploadForm initialValues={file} onSubmit={this.addFile}/> 
-                {files.map(file => 
+                <div className="files">
+                    {files.map(file => 
                     <div className="fileId" key={file.id}>
                         <Link to={`/display/${file.id}`}>
-                            <p>{file.id}</p>
+                            <p key={file.id}>{file.id}</p>
                         </Link>
                     </div>)}
+                </div>
             </div>
         )
     }

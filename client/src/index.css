@@ -15,6 +15,7 @@ body {
 
 .uploadImage {
   background-color: aquamarine;
+  text-align: center;
   width: 50%;
 }
 
@@ -30,4 +31,8 @@ body {
 img {
   max-width: 90%;
   height: 400px;
+}
+
+.files {
+  display: flex;
 }

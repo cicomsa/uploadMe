@@ -18,7 +18,7 @@ class DisplayPage extends PureComponent {
         }
         
         return (
-            <div>
+            <div className="displayImage">
                 <p>Display image</p>
                 {imagePreview}
                 <Link to={`/upload`}>
