@@ -1,7 +1,12 @@
 import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
+import {getFile} from '../actions/file'
 
 class DisplayPage extends PureComponent {
+
+    componentWillMount() {
+        this.props.getFile(this.props.match.params.id)
+    }
 
     render() {
 
@@ -23,8 +28,8 @@ class DisplayPage extends PureComponent {
 
 const mapStateToProps = (state) => {
     return {
-        file: state.uploadFile
+        file: state.file
     }
 }
 
-export default connect (mapStateToProps) (DisplayPage)
+export default connect (mapStateToProps,{getFile}) (DisplayPage)

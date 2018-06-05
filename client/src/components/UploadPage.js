@@ -1,11 +1,16 @@
 import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 import UploadForm from './UploadForm'
-import {uploadFile} from '../actions/uploadFile'
+import {uploadFile, getFiles} from '../actions/file'
 
 class UploadPage extends PureComponent {
 
     state = {imagePreviewUrl: ''}
+
+    componentWillMount() {
+        this.props.getFiles()
+    }
 
     addFile = (file) => {
         this.props.uploadFile(file) 
@@ -13,12 +18,18 @@ class UploadPage extends PureComponent {
 
     render() {
 
-        const {file} = this.props
+        const {file, files} = this.props
      
         return (
             <div>
                 <p>Preview image</p>
-                <UploadForm initialValues={file} onSubmit={this.addFile}/>             
+                <UploadForm initialValues={file} onSubmit={this.addFile}/> 
+                {files.map(file => 
+                    <div className="fileId" key={file.id}>
+                        <Link to={`/display/${file.id}`}>
+                            <p>{file.id}</p>
+                        </Link>
+                    </div>)}
             </div>
         )
     }
@@ -26,10 +37,11 @@ class UploadPage extends PureComponent {
 
 const mapStateToProps = (state) => {
     return {
-        file: state.uploadFile
+        file: state.file,
+        files: state.files
     }
 }
 
-export default connect (mapStateToProps, {uploadFile}) (UploadPage)
+export default connect (mapStateToProps, {uploadFile, getFiles}) (UploadPage)
 
 

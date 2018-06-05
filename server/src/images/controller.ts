@@ -19,4 +19,9 @@ export default class ImageController {
     return Image.findOne(id)
   }
 
+  @Get('/images')
+  async getImages(
+  ) {
+    return await Image.find()
+  }
 }
