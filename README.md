@@ -16,8 +16,8 @@ In the client directory:
 In the server directory:
 
 * Have a ‘DATABASE_URL' environment variable set
-* Start the TypeScript compiler: tsc -w
-* Connect to Postgres with TypeORM: yarn start
+* To start the TypeScript compiler run ```tsc -w```
+* To connect to Postgres with TypeORM run ```yarn start```
 
 ### Routes
 
