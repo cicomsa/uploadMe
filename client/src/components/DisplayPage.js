@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 import {getFile} from '../actions/file'
 
 class DisplayPage extends PureComponent {
@@ -19,8 +20,10 @@ class DisplayPage extends PureComponent {
         return (
             <div>
                 <p>Display image</p>
-                {/* <img src={file.imagePreviewUrl} alt="viewImage" width="300px"/> */}
                 {imagePreview}
+                <Link to={`/upload`}>
+                    <p>Back</p>
+                </Link>
             </div>
         )
     }
